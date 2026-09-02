@@ -292,4 +292,13 @@ a {
     .hero p {
         font-size: 18px;
     }
+
+    .about-layout {
+        flex-direction: column;
+    }
+
+    .profile-image {
+        width: 100%;
+        max-width: 320px;
+    }
 }
