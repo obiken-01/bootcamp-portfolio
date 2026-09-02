@@ -209,10 +209,6 @@ a {
 /* =============================
    Contact form
    ============================= */
-.contact-section{
-    border: 1px solid #e5e7eb;
-    border-radius: 16px;
-}
 
 .contact-form {
     display: flex;
