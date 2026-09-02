@@ -77,6 +77,26 @@ a {
     padding: 72px 24px;
 }
 
+.about-layout {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 32px;
+}
+
+.about-copy {
+    flex: 1;
+}
+
+.profile-image {
+    width: 320px;
+    height: 320px;
+    object-fit: cover;
+    border-radius: 16px;
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.12);
+    flex-shrink: 0;
+}
+
 .hero h2 {
     margin-top: 0;
     margin-bottom: 16px;
@@ -189,6 +209,11 @@ a {
 /* =============================
    Contact form
    ============================= */
+.contact-section{
+    border: 1px solid #e5e7eb;
+    border-radius: 16px;
+}
+
 .contact-form {
     display: flex;
     flex-direction: column;
