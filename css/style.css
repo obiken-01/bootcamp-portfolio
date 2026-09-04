@@ -27,29 +27,51 @@ a {
 .site-header {
     background-color: #111827;
     color: white;
-    padding: 20px 24px;
+    padding: 0;
+    box-shadow: 0 4px 18px rgba(15, 23, 42, 0.16);
 }
 
-.navbar {
+.legacy-page .navbar {
+    width: 100%;
     max-width: 1100px;
     margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 24px;
+    padding: 18px 24px;
 }
 
-.brand h1 {
+.site-navbar .navbar-brand,
+.site-navbar .nav-link {
+    color: #f8fafc;
+}
+
+.site-navbar .navbar-brand:hover,
+.site-navbar .navbar-brand:focus,
+.site-navbar .nav-link:hover,
+.site-navbar .nav-link:focus {
+    color: #facc15;
+}
+
+.site-navbar .nav-link {
+    font-weight: 600;
+    padding: 8px 12px;
+    border-radius: 8px;
+}
+
+.site-navbar .nav-link:hover,
+.site-navbar .nav-link:focus {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.legacy-page .brand h1 {
     margin: 0;
     line-height: 1.1;
 }
 
-.brand p {
+.legacy-page .brand p {
     margin: 8px 0 0;
     color: #d1d5db;
 }
 
-.nav-links {
+.legacy-page .nav-links {
     display: flex;
     flex-wrap: wrap;
     gap: 18px;
@@ -58,68 +80,109 @@ a {
     margin: 0;
 }
 
-.nav-links a {
+.legacy-page .nav-links a {
     text-decoration: none;
     font-weight: 600;
 }
 
-.nav-links a:hover,
-.nav-links a:focus {
+.legacy-page .nav-links a:hover,
+.legacy-page .nav-links a:focus {
     color: #facc15;
 }
 
 /* =============================
    Hero / About
    ============================= */
-.hero {
+.legacy-page .hero {
     max-width: 1100px;
-    margin: 0 auto;
+    margin: 32px auto 0;
     padding: 72px 24px;
+    background: linear-gradient(135deg, #ffffff 0%, #eff6ff 100%);
+    border: 1px solid #dbeafe;
+    border-radius: 24px;
+    box-shadow: 0 18px 40px rgba(37, 99, 235, 0.08);
 }
 
-.about-layout {
+main > section[id] {
+    scroll-margin-top: 96px;
+}
+
+.hero-section {
+    max-width: 1320px;
+    margin: 32px auto 0;
+    border-radius: 24px;
+    box-shadow: 0 18px 40px rgba(37, 99, 235, 0.08);
+}
+
+.legacy-page .about-layout {
     display: flex;
     align-items: center;
     justify-content: space-between;
     gap: 32px;
 }
 
-.about-copy {
+.legacy-page .about-copy {
     flex: 1;
 }
 
-.profile-image {
+.legacy-page .eyebrow {
+    margin: 0 0 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    font-size: 12px;
+    font-weight: 700;
+    color: #2563eb;
+}
+
+.legacy-page .profile-image {
     width: 320px;
     height: 320px;
     object-fit: cover;
-    border-radius: 16px;
-    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.12);
+    border-radius: 20px;
+    box-shadow: 0 16px 32px rgba(15, 23, 42, 0.12);
     flex-shrink: 0;
 }
 
-.hero h2 {
+.legacy-page .hero h2 {
     margin-top: 0;
     margin-bottom: 16px;
-    font-size: 48px;
+    font-size: clamp(2.4rem, 4vw, 3.5rem);
     line-height: 1.1;
 }
 
-.hero p {
+.legacy-page .hero p {
     max-width: 680px;
     margin-bottom: 0;
     font-size: 20px;
 }
 
+.legacy-page .about-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin-top: 28px;
+}
+
+.legacy-page .btn-secondary {
+    background-color: #e2e8f0;
+    color: #0f172a;
+}
+
+.legacy-page .btn-secondary:hover,
+.legacy-page .btn-secondary:focus {
+    background-color: #cbd5e1;
+}
+
 /* =============================
    Reusable sections
    ============================= */
-.section {
+.legacy-page .section {
     max-width: 1100px;
     margin: 0 auto;
     padding: 56px 24px;
 }
 
-.section-title {
+.legacy-page .section-title {
     margin-top: 0;
     margin-bottom: 24px;
     font-size: 32px;
@@ -129,13 +192,13 @@ a {
 /* =============================
    Skills
    ============================= */
-.skills-grid {
+.legacy-page .skills-grid {
     display: flex;
     flex-wrap: wrap;
     gap: 16px;
 }
 
-.skill-card {
+.legacy-page .skill-card {
     flex: 1 1 220px;
     background-color: white;
     border: 1px solid #e5e7eb;
@@ -145,7 +208,7 @@ a {
     transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-.skill-card:hover {
+.legacy-page .skill-card:hover {
     transform: translateY(-3px);
     box-shadow: 0 10px 24px rgba(0, 0, 0, 0.08);
 }
@@ -153,13 +216,13 @@ a {
 /* =============================
    Project grid
    ============================= */
-.projects-grid {
+.legacy-page .projects-grid {
     display: flex;
     flex-wrap: wrap;
     gap: 24px;
 }
 
-.project-card {
+.legacy-page .project-card {
     flex: 1 1 280px;
     background-color: white;
     border: 1px solid #e5e7eb;
@@ -169,18 +232,31 @@ a {
     transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-.project-card:hover {
+.legacy-page .project-card:hover {
     transform: translateY(-4px);
     box-shadow: 0 16px 32px rgba(0, 0, 0, 0.10);
 }
 
-.project-card h3 {
+.legacy-page .project-tag {
+    display: inline-block;
+    margin-bottom: 12px;
+    padding: 6px 10px;
+    border-radius: 999px;
+    background-color: #dbeafe;
+    color: #1d4ed8;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+}
+
+.legacy-page .project-card h3 {
     margin-top: 0;
     margin-bottom: 10px;
     color: #111827;
 }
 
-.project-card p {
+.legacy-page .project-card p {
     margin-top: 0;
     margin-bottom: 20px;
 }
@@ -188,7 +264,7 @@ a {
 /* =============================
    Reusable button
    ============================= */
-.btn {
+.legacy-page .btn {
     display: inline-block;
     border: none;
     border-radius: 999px;
@@ -199,30 +275,42 @@ a {
     font-weight: 700;
     text-decoration: none;
     cursor: pointer;
+    transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease,
+        transform 0.2s ease;
 }
 
-.btn:hover,
-.btn:focus {
+.legacy-page .btn:hover,
+.legacy-page .btn:focus {
     background-color: #1d4ed8;
+    color: white;
+    transform: translateY(-1px);
+}
+
+.site-navbar .navbar-toggler {
+    border-color: rgba(255, 255, 255, 0.45);
+}
+
+.site-navbar .navbar-toggler:focus {
+    box-shadow: 0 0 0 3px rgba(250, 204, 21, 0.35);
 }
 
 /* =============================
    Contact form
    ============================= */
 
-.contact-form {
+.legacy-page .contact-form {
     display: flex;
     flex-direction: column;
     gap: 16px;
     max-width: 640px;
 }
 
-.contact-form label {
+.legacy-page .contact-form label {
     font-weight: 600;
 }
 
-.contact-form input,
-.contact-form textarea {
+.legacy-page .contact-form input,
+.legacy-page .contact-form textarea {
     width: 100%;
     padding: 12px 14px;
     border: 1px solid #d1d5db;
@@ -231,13 +319,13 @@ a {
     font: inherit;
 }
 
-.contact-form input:focus,
-.contact-form textarea:focus {
+.legacy-page .contact-form input:focus,
+.legacy-page .contact-form textarea:focus {
     outline: 3px solid rgba(37, 99, 235, 0.20);
     border-color: #2563eb;
 }
 
-.contact-form .btn {
+.legacy-page .contact-form .btn {
     align-self: flex-start;
 }
 
@@ -270,35 +358,90 @@ a {
    Responsive layout
    ============================= */
 @media (max-width: 700px) {
-    .navbar {
-        flex-direction: column;
-        align-items: flex-start;
+    .legacy-page .navbar {
+        padding: 14px 20px;
     }
 
-    .nav-links {
+    .legacy-page .nav-links {
         gap: 12px;
     }
 
-    .hero,
-    .section {
+    .legacy-page .hero,
+    .legacy-page .section {
         padding-left: 20px;
         padding-right: 20px;
     }
 
-    .hero h2 {
+    .legacy-page .hero h2 {
         font-size: 38px;
     }
 
-    .hero p {
+    .legacy-page .hero p {
         font-size: 18px;
     }
 
-    .about-layout {
+    .legacy-page .about-layout {
         flex-direction: column;
+        text-align: left;
     }
 
-    .profile-image {
+    .legacy-page .about-actions {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .legacy-page .profile-image {
         width: 100%;
         max-width: 320px;
+    }
+
+    .hero-section {
+        margin-top: 20px;
+        border-radius: 16px;
+    }
+}
+
+/* Bootstrap page refinements */
+.bootstrap-page {
+    background-color: #f8fafc;
+}
+
+.bootstrap-page .section-space {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+}
+
+.bootstrap-page .section-heading h2,
+.bootstrap-page .section-band h2,
+.bootstrap-page #contact h2 {
+    color: #1f2937;
+    letter-spacing: 0;
+}
+
+.bootstrap-page .section-kicker {
+    color: #2563eb;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+}
+
+.bootstrap-page .hero-section {
+    padding-top: 4.5rem;
+    padding-bottom: 4.5rem;
+}
+
+.bootstrap-page .hero-section h1 {
+    color: #111827;
+    letter-spacing: 0;
+}
+
+@media (max-width: 991.98px) {
+    .bootstrap-page .navbar-collapse {
+        padding-top: 0.75rem;
+    }
+
+    .bootstrap-page .nav-link {
+        padding: 0.6rem 0;
     }
 }
